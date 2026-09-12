@@ -16,7 +16,7 @@ export async function GET() {
     const { data: turnos, error } = await supabase
       .from('turnos')
       .select('*')
-      .eq('fecha_hora', fechaManana);
+      .eq('fecha', fechaManana);
 
     if (error) throw error;
 
