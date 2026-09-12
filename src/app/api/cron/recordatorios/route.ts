@@ -14,10 +14,9 @@ export async function GET() {
 
     // 2. Buscar en Supabase los turnos de mañana
     const { data: turnos, error } = await supabase
-      .from('turnos')
-      .select('*')
-      .eq('fecha_hora', fechaManana);
-
+  .from('turnos')
+  .select('*')
+  .eq('fecha_turno', fechaManana);
     if (error) throw error;
 
     if (!turnos || turnos.length === 0) {
